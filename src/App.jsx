@@ -1,7 +1,9 @@
+import Content from "./components/Content";
+
 function App() {
   return (
-    <div className="">
-      <h1 className="underline">Hello</h1>
+    <div className="min-h-screen">
+      <Content />
     </div>
   );
 }
