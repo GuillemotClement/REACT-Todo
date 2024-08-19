@@ -17,6 +17,15 @@ function App() {
     setTodoList([...todoList, todo]);
   }
 
+  // const data = [
+  //   {
+  //     id: crypto.randomUUID(),
+  //     content: "Ma first todo",
+  //     done: false,
+  //     edit: false,
+  //   },
+  // ];
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
       <div className="container rounded-xl bg-white px-10 py-8 shadow-lg">
@@ -24,7 +33,7 @@ function App() {
           Ma todo liste
         </h1>
         <AddTodo addTodo={addTodo} />
-        {/* <TodoList todoList={todoList} /> */}
+        <TodoList todoList={todoList} />
       </div>
     </div>
   );

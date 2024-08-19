@@ -1,14 +1,13 @@
+import TodoItem from "./TodoItem";
+
 export default function TodoList({ todoList }) {
-  return (
-    <div className="">
-      <h2>Mes todo</h2>
-      <div className="">
-        {todoList.map((todo) => (
-          <div className="" key={todo.id}>
-            <h3>{todo.title}</h3>
-          </div>
-        ))}
-      </div>
-    </div>
+  return todoList.length ? (
+    <ul>
+      {todoList.map((todo) => {
+        <TodoItem todo={todo} />;
+      })}
+    </ul>
+  ) : (
+    <p className="text-center">Aucune todo pour le moment</p>
   );
 }

@@ -21,6 +21,7 @@ export default function AddTodo({ addTodo }) {
       setValue("");
     }
   }
+
   return (
     <form className="flex flex-col">
       <div className="flex flex-col gap-y-3">
