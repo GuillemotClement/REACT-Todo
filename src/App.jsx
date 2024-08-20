@@ -12,19 +12,8 @@ function App() {
       done: false,
       edit: false,
     };
-    // const newTodoList = [...todoList, todo];
-    // setTodoList(newTodoList);
     setTodoList([...todoList, todo]);
   }
-
-  // const data = [
-  //   {
-  //     id: crypto.randomUUID(),
-  //     content: "Ma first todo",
-  //     done: false,
-  //     edit: false,
-  //   },
-  // ];
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
