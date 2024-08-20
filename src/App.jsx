@@ -11,6 +11,7 @@ function App() {
       content,
       done: false,
       edit: false,
+      selected: false,
     };
     setTodoList([...todoList, todo]);
   }
@@ -49,6 +50,22 @@ function App() {
     );
   }
 
+  function selectTodo(id) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              selected: !todo.selected,
+            }
+          : {
+              ...todo,
+              selected: false,
+            },
+      ),
+    );
+  }
+
   function cancelTodo() {}
 
   return (
@@ -65,6 +82,7 @@ function App() {
           editTodoMod={editTodoMod}
           editTodo={editTodo}
           cancelTodo={cancelTodo}
+          selectTodo={selectTodo}
         />
       </div>
     </div>

@@ -7,7 +7,7 @@ export default function TodoList({
   validTodo,
   editTodoMod,
   editTodo,
-  cancelTodo,
+  selectTodo,
 }) {
   return todoList.length ? (
     <ul>
@@ -26,6 +26,7 @@ export default function TodoList({
             validTodo={() => validTodo(todo.id)}
             editTodoMod={() => editTodoMod(todo.id)}
             key={todo.id}
+            selectTodo={() => selectTodo(todo.id)}
           />
         ),
       )}
