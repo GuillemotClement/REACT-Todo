@@ -15,6 +15,10 @@ function App() {
     setTodoList([...todoList, todo]);
   }
 
+  function deleteTodo(id) {
+    setTodoList(todoList.filter((todo) => todo.id !== id));
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
       <div className="container rounded-xl bg-white px-10 py-8 shadow-lg">
@@ -22,7 +26,7 @@ function App() {
           Ma todo liste
         </h1>
         <AddTodo addTodo={addTodo} />
-        <TodoList todoList={todoList} />
+        <TodoList todoList={todoList} deleteTodo={deleteTodo} />
       </div>
     </div>
   );

@@ -1,10 +1,14 @@
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ todoList }) {
+export default function TodoList({ todoList, deleteTodo }) {
   return todoList.length ? (
     <ul>
       {todoList.map((todo) => (
-        <TodoItem todo={todo} />
+        <TodoItem
+          todo={todo}
+          deleteTodo={() => deleteTodo(todo.id)}
+          key={todo.id}
+        />
       ))}
     </ul>
   ) : (
