@@ -1,4 +1,4 @@
-export default function TodoItem({ todo, deleteTodo, validTodo, editTodo }) {
+export default function TodoItem({ todo, deleteTodo, validTodo, editTodoMod }) {
   return (
     <div className="mb-3 rounded-md border-b px-4 py-3">
       <li className="flex justify-between">
@@ -14,7 +14,7 @@ export default function TodoItem({ todo, deleteTodo, validTodo, editTodo }) {
           </button>
           <button
             className="rounded-lg bg-orange-500 px-2 py-1 text-white shadow-lg hover:bg-orange-700"
-            onClick={editTodo}
+            onClick={editTodoMod}
           >
             Modifier
           </button>

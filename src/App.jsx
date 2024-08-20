@@ -27,13 +27,29 @@ function App() {
     );
   }
 
-  function editTodo(id) {
+  function editTodoMod(id) {
     setTodoList(
       todoList.map((todo) =>
         todo.id === id ? { ...todo, edit: !todo.edit } : todo,
       ),
     );
   }
+
+  function editTodo(id, content) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              edit: false,
+              content,
+            }
+          : todo,
+      ),
+    );
+  }
+
+  function cancelTodo() {}
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
@@ -46,7 +62,9 @@ function App() {
           todoList={todoList}
           deleteTodo={deleteTodo}
           validTodo={validTodo}
+          editTodoMod={editTodoMod}
           editTodo={editTodo}
+          cancelTodo={cancelTodo}
         />
       </div>
     </div>
