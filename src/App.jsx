@@ -19,6 +19,14 @@ function App() {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   }
 
+  function validTodo(id) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      ),
+    );
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
       <div className="container rounded-xl bg-white px-10 py-8 shadow-lg">
@@ -26,7 +34,11 @@ function App() {
           Ma todo liste
         </h1>
         <AddTodo addTodo={addTodo} />
-        <TodoList todoList={todoList} deleteTodo={deleteTodo} />
+        <TodoList
+          todoList={todoList}
+          deleteTodo={deleteTodo}
+          validTodo={validTodo}
+        />
       </div>
     </div>
   );
