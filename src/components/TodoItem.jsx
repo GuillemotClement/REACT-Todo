@@ -1,5 +1,4 @@
-export default function TodoItem({ todo, deleteTodo, validTodo }) {
-  console.log("TodoItem rendering:", todo.id, todo.done);
+export default function TodoItem({ todo, deleteTodo, validTodo, editTodo }) {
   return (
     <div className="mb-3 rounded-md border-b px-4 py-3">
       <li className="flex justify-between">
@@ -13,7 +12,10 @@ export default function TodoItem({ todo, deleteTodo, validTodo }) {
           >
             Valider
           </button>
-          <button className="rounded-lg bg-orange-500 px-2 py-1 text-white shadow-lg hover:bg-orange-700">
+          <button
+            className="rounded-lg bg-orange-500 px-2 py-1 text-white shadow-lg hover:bg-orange-700"
+            onClick={editTodo}
+          >
             Modifier
           </button>
           <button

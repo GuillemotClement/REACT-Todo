@@ -27,6 +27,14 @@ function App() {
     );
   }
 
+  function editTodo(id) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id ? { ...todo, edit: !todo.edit } : todo,
+      ),
+    );
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
       <div className="container rounded-xl bg-white px-10 py-8 shadow-lg">
@@ -38,6 +46,7 @@ function App() {
           todoList={todoList}
           deleteTodo={deleteTodo}
           validTodo={validTodo}
+          editTodo={editTodo}
         />
       </div>
     </div>
