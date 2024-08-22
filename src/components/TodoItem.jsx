@@ -18,7 +18,7 @@ export default function TodoItem({
         </span>
         <div className="flex gap-x-3">
           <Button
-            className="rounded-lg bg-green-500 px-2 py-1 text-white shadow-lg hover:bg-green-700"
+            className="bg-green-500 text-white hover:bg-green-700"
             onClick={(e) => {
               e.stopPropagation();
               validTodo();
@@ -26,7 +26,7 @@ export default function TodoItem({
             text="Valider"
           />
           <Button
-            className="rounded-lg bg-orange-500 px-2 py-1 text-white shadow-lg hover:bg-orange-700"
+            className="bg-orange-500 text-white hover:bg-orange-700"
             onClick={(e) => {
               e.stopPropagation();
               editTodoMod();
@@ -34,7 +34,7 @@ export default function TodoItem({
             text="Modifier"
           />
           <Button
-            className="rounded-lg bg-red-500 px-2 py-1 text-white shadow-lg hover:bg-red-700"
+            className="bg-red-500 text-white hover:bg-red-700"
             onClick={(e) => {
               e.stopPropagation();
               deleteTodo();

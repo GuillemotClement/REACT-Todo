@@ -39,7 +39,7 @@ export default function AddTodo({ addTodo }) {
         <Button
           text="Ajouter une nouvelle todo"
           onClick={handleClick}
-          className="rounded-lg bg-blue-400 px-3 py-2 text-white shadow-md hover:bg-blue-700"
+          className="bg-blue-400 text-white hover:bg-blue-700"
         />
       </div>
     </form>

@@ -37,12 +37,12 @@ export default function EditTodo({ todo, editTodo, cancelTodo }) {
       </div>
       <div className="my-5 flex justify-end gap-x-3">
         <Button
-          className="w-80 rounded-lg bg-slate-400 px-3 py-2 text-white shadow-md hover:bg-slate-700"
+          className="w-80 bg-slate-400 text-white hover:bg-slate-700"
           onClick={cancelTodo}
           text="Annuler"
         />
         <Button
-          className="w-80 rounded-lg bg-blue-400 px-3 py-2 text-white shadow-md hover:bg-blue-700"
+          className="w-80 bg-blue-400 text-white hover:bg-blue-700"
           onClick={handleClick}
           text="Modifier"
         />
