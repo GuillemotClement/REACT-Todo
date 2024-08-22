@@ -36,7 +36,11 @@ export default function AddTodo({ addTodo }) {
         />
       </div>
       <div className="my-5 flex justify-end">
-        <Button text="Ajouter une nouvelle todo" onClick={handleClick} />
+        <Button
+          text="Ajouter une nouvelle todo"
+          onClick={handleClick}
+          className="rounded-lg bg-blue-400 px-3 py-2 text-white shadow-md hover:bg-blue-700"
+        />
       </div>
     </form>
   );

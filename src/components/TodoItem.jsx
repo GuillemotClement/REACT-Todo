@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function TodoItem({
   todo,
   deleteTodo,
@@ -15,33 +17,30 @@ export default function TodoItem({
           {todo.content} {todo.done && "✅"}
         </span>
         <div className="flex gap-x-3">
-          <button
+          <Button
             className="rounded-lg bg-green-500 px-2 py-1 text-white shadow-lg hover:bg-green-700"
             onClick={(e) => {
               e.stopPropagation();
               validTodo();
             }}
-          >
-            Valider
-          </button>
-          <button
+            text="Valider"
+          />
+          <Button
             className="rounded-lg bg-orange-500 px-2 py-1 text-white shadow-lg hover:bg-orange-700"
             onClick={(e) => {
               e.stopPropagation();
               editTodoMod();
             }}
-          >
-            Modifier
-          </button>
-          <button
+            text="Modifier"
+          />
+          <Button
             className="rounded-lg bg-red-500 px-2 py-1 text-white shadow-lg hover:bg-red-700"
             onClick={(e) => {
               e.stopPropagation();
               deleteTodo();
             }}
-          >
-            Supprimer
-          </button>
+            text="Supprimer"
+          />
         </div>
       </li>
     </div>

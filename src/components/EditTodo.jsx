@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button";
 
 export default function EditTodo({ todo, editTodo, cancelTodo }) {
   const [value, setValue] = useState(todo.content);
@@ -35,18 +36,16 @@ export default function EditTodo({ todo, editTodo, cancelTodo }) {
         />
       </div>
       <div className="my-5 flex justify-end gap-x-3">
-        <button
+        <Button
           className="w-80 rounded-lg bg-slate-400 px-3 py-2 text-white shadow-md hover:bg-slate-700"
           onClick={cancelTodo}
-        >
-          Annuler
-        </button>
-        <button
+          text="Annuler"
+        />
+        <Button
           className="w-80 rounded-lg bg-blue-400 px-3 py-2 text-white shadow-md hover:bg-blue-700"
           onClick={handleClick}
-        >
-          Modifier
-        </button>
+          text="Modifier"
+        />
       </div>
     </form>
   );
