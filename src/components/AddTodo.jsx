@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button";
 
 export default function AddTodo({ addTodo }) {
   const [value, setValue] = useState("");
@@ -35,12 +36,7 @@ export default function AddTodo({ addTodo }) {
         />
       </div>
       <div className="my-5 flex justify-end">
-        <button
-          className="w-80 rounded-lg bg-blue-400 px-3 py-2 text-white shadow-md hover:bg-blue-700"
-          onClick={handleClick}
-        >
-          Ajouter
-        </button>
+        <Button text="Ajouter une nouvelle todo" onClick={handleClick} />
       </div>
     </form>
   );
