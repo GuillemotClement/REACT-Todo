@@ -1,72 +1,55 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
+import todoReducer from "./reducers/todoReducer";
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
+  const [state, dispatch] = useReducer(todoReducer, {
+    todoList: [],
+  });
 
   function addTodo(content) {
-    const todo = {
-      id: crypto.randomUUID(),
+    dispatch({
+      type: "ADD_TODO",
       content,
-      done: false,
-      edit: false,
-      selected: false,
-    };
-    setTodoList([...todoList, todo]);
+    });
   }
 
   function deleteTodo(id) {
-    setTodoList(todoList.filter((todo) => todo.id !== id));
+    dispatch({
+      type: "DELETE_TODO",
+      id,
+    });
   }
 
   function validTodo(id) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo,
-      ),
-    );
+    dispatch({
+      type: "VALID_TODO",
+      id,
+    });
   }
 
   function editTodoMod(id) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id ? { ...todo, edit: !todo.edit } : todo,
-      ),
-    );
+    dispatch({
+      type: "EDIT_TODO_MOD",
+      id,
+    });
   }
 
   function editTodo(id, content) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              edit: false,
-              content,
-            }
-          : todo,
-      ),
-    );
+    dispatch({
+      type: "EDIT_TODO",
+      id,
+      content,
+    });
   }
 
   function selectTodo(id) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              selected: !todo.selected,
-            }
-          : {
-              ...todo,
-              selected: false,
-            },
-      ),
-    );
+    dispatch({
+      type: "SELECT_TODO",
+      id,
+    });
   }
-
-  function cancelTodo() {}
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
@@ -76,12 +59,11 @@ function App() {
         </h1>
         <AddTodo addTodo={addTodo} />
         <TodoList
-          todoList={todoList}
+          todoList={state.todoList}
           deleteTodo={deleteTodo}
           validTodo={validTodo}
           editTodoMod={editTodoMod}
           editTodo={editTodo}
-          cancelTodo={cancelTodo}
           selectTodo={selectTodo}
         />
       </div>
